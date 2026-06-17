@@ -4,20 +4,20 @@ Output files of Compound Discoverer (v3.3 SP2), using Orbitrap LC-MS/MS data of 
 
 
 
-# Step 0 : Select appropriate scaling method
+## Step 0 : Select appropriate scaling method
 
 Select between `none`, `auto`, `pareto`, `log`, `log_auto`, `log_pareto`.
 
 
 
-# Step 1 : Preprocessing - Noise filtering and scaling
+## Step 1 : Preprocessing - Noise filtering and scaling
 
 1) Filter noises based on subtraction of intensities between samples and blank.
 2) Adjust filtering method based on `Step 0`.
 
 
 
-# Step 2 : PCA
+## Step 2 : PCA
 
 Multivariate analysis using PCA method, and the statistical analysis is performed using Hotelling's T-squared test.
 
