@@ -7,8 +7,8 @@ Select between `none`, `auto`, `pareto`, `log`, `log_auto`, `log_pareto`.
 
 
 ## Step 1 : Preprocessing - Noise filtering and scaling
-### 1) Filter noises based on subtraction of intensities between samples and blank.
-### 2) Adjust filtering method based on `Step 0`.
+1) Filter noises based on subtraction of intensities between samples and blank.
+2) Adjust filtering method based on `Step 0`.
 
 
 ## Step 2 : PCA
