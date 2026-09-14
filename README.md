@@ -14,11 +14,11 @@
 3) Check the `Area` box in `Field Chooser` (its below the `Compounds` tag, next to the `Tags` column).
 4) Right-click anywhere in the metabolic table -> `Export` -> `As Excel...` -> change the `Path`, and click the `Export` button.
 5) After exporting, open exported excel file, and change `Area: ~` format columns to desiring sample names.
-   I recommend to name them with different starting alphabet, to avoid errors in further steps (e.g., If your experimental groups are `Sucrose`, and `Sucralose`, name them as `A01`, `B01`, not like `So01`, `Sa01`.)
+   I recommend to name them with different starting alphabet, to avoid errors in further steps (e.g., If your experimental groups are `Solvent`, and `Saccharose`, name them as `A01`, `B01`, not like `So01`, `Sa01`.)
 
 
 ## Step 1 : Scaling method selection
-+ Use `01. scaling_selection_for_metabolomics_GutLungAxis.ipynb`.
++ Use `01._Scaling_method_selection_GutLungAxis.ipynb`.
 
 + Select between `none`, `auto`, `pareto`, `log`, `log_auto`, `log_pareto`.
 + The more pooled QC samples become dense in PCA plot, it means its less biased.
@@ -26,7 +26,7 @@
 
 
 ## Step 2 : Noise filtering and scaling
-+ Use `02. Preprocessing_GutLungAxis.ipynb`.
++ Use `02._Noise_filtering_and_scaling_GutLungAxis.ipynb`.
 
 + Filter noises based on subtraction between intensities of samples and blanks (only blanks used in extraction procedure is used in this step).
 + If <`mean intensities of samples except pooled QCs` - `mean intensities of blanks`> < 0, it means corresponding metabolic feature could be interpreted as noise.
@@ -34,20 +34,20 @@
 
 
 ## Step 3 : PCA visualization
-+ Use `03. PCA_GutLungAxis.ipynb`.
++ Use `03._PCA_visualization_GutLungAxis.ipynb`.
 
 + Statistical significance could also be identified using `Hotelling's T-squared test` (using PC values which cumulative sum proportion excess 80%).
 
 
 ## Step 4 : Statistical analysis with FDR adjusting
-+ Use `04. MeboAnalyst_OneFactor_format+bky_26.01.05.ipynb`.
++ Use `04._Statistical_analysis_with_FDR_adjusting_GutLungAxis.ipynb`.
 
 + Statistical analysis with Mann-Whitney test (if only two groups are compared) or Kruskal-Wallis test (if more than two groups are compared).
 + FDR (False Discovery Rate) should be adjusted if multiple testing was performed (BKY method (Benjamini, Krieger, and Yekutieli, 2006) was used in the python script).
 
 
 ## Step 5 : Mapping to KEGG pathways
-+ Use `05. MetaboAnalyst_Pathways_format_rev_GutLungAxis.ipynb` to make `MetaboAnanlyst 6.0` (https://www.metaboanalyst.ca/) format input files.
++ Use `05._Mapping_to_KEGG_pathways_GutLungAxis.ipynb` to make `MetaboAnanlyst 6.0` (https://www.metaboanalyst.ca/) format input files.
 + After processing above python script, Greek alphabets should be modified (e.g., α -> alpha, β -> beta, γ -> gamma).
 
 1) Open up the MetaboAnalyst (link is above).
@@ -64,20 +64,20 @@
    -> Briefly check the result, then check `Submit`.
 5) Download `pathway_result.csv`, then change their name to distinguish with other output files (e.g., `pathway_results_2w.csv`).
 
-+ Use `06. Pathway_Enrichment_GutLungAxis.R` for visualization to enrichment plot.
-+ (Optional) If you want to merge paired sample data in one enrichment plot, use `06. Pathway_Enrichment_merged_GutLungAxis.R`.
++ Use `06._Enrichment_plot_GutLungAxis.R` for visualization to enrichment plot.
++ (Optional) If you want to merge paired sample data in one enrichment plot, use `06._Enrichment_plot_merged_GutLungAxis.R`.
 
 
 ## Step 6 : Volcano plot visualization
 
-+ Use `07. Volcano_plot_GutLungAxis_26.04.26.R` to visualize differential metabolites (default value is `q-value < 0.05` & `|Log2FoldChange| < 1`).
++ Use `07._Volcano_plot_GutLungAxis.R` to visualize differential metabolites (default value is `q-value < 0.05` & `|Log2FoldChange| < 1`).
 + You can also show only specific metabolic features in interested pathways.
 
 
 ## Step 7 : Candidate biomarkers discovery
 
-+ Use `08. Individual_metabolites_merged_v2_GutLungAxis.ipynb` to individually visualize differential metabolites into box plots.
-+ (Optional) Or you can also find candidate biomarkers by using `MFuzz` package in `R`, which clusters metabolic features based on trending tendencies. In this case, use `09. Mfuzz_GutLungAxis_26.04.26.R`.
++ Use `08._Individual_metabolites_plot_GutLungAxis.ipynb` to individually visualize differential metabolites into box plots.
++ (Optional) Or you can also find candidate biomarkers by using `MFuzz` package in `R`, which clusters metabolic features based on trending tendencies. In this case, use `09._Mfuzz_GutLungAxis.R`.
 
 + Identify candidate features using venn-diagram or Mfuzz clustering or supervised methods-based multivariate analysis, such as PLS-DA, OPLS-DA (to minimize risks of over-fitting), and sPLS-DA. Machine learning methods can be also used, such as Random Forest (RF; recommended for large dataset) or Suppot Vector Machine (SVM; recommended for small dataset).
 
