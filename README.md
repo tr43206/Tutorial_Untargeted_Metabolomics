@@ -3,9 +3,9 @@
 
 + `Gut-Lung Axis` project
 + Orbitrap LC-MS/MS
-+ Phase A : Water with 1% FA (Formic acid)
-+ Phase B : Methanol with 1% FA
-
++ Phase A (Stationary phase) : Water with 1% FA (Formic acid)
++ Phase B (Mobile phase) : Methanol with 1% FA
++ Total of 20 minutes protocol was used.
 
 
 ## Step 0 : Export Excel file from Compound Discoverer
@@ -17,14 +17,12 @@
    I recommend to name them with different starting alphabet, to avoid errors in further steps (e.g., If your experimental groups are `Sucrose`, and `Sucralose`, name them as `A01`, `B01`, not like `So01`, `Sa01`.)
 
 
-
 ## Step 1 : Scaling method selection
 + Use `01. scaling_selection_for_metabolomics_GutLungAxis.ipynb`.
 
 + Select between `none`, `auto`, `pareto`, `log`, `log_auto`, `log_pareto`.
 + The more pooled QC samples become dense in PCA plot, it means its less biased.
 + If the raw data shows right-skewed distribution, Log 10 transformation is recommended.
-
 
 
 ## Step 2 : Noise filtering and scaling
@@ -35,12 +33,10 @@
 + Adjust filtering method from `Step 1`.
 
 
-
 ## Step 3 : PCA visualization
 + Use `03. PCA_GutLungAxis.ipynb`.
 
 + Statistical significance could also be identified using `Hotelling's T-squared test` (using PC values which cumulative sum proportion excess 80%).
-
 
 
 ## Step 4 : Statistical analysis with FDR adjusting
@@ -48,7 +44,6 @@
 
 + Statistical analysis with Mann-Whitney test (if only two groups are compared) or Kruskal-Wallis test (if more than two groups are compared).
 + FDR (False Discovery Rate) should be adjusted if multiple testing was performed (BKY method (Benjamini, Krieger, and Yekutieli, 2006) was used in the python script).
-
 
 
 ## Step 5 : Mapping to KEGG pathways
@@ -73,12 +68,10 @@
 + (Optional) If you want to merge paired sample data in one enrichment plot, use `06. Pathway_Enrichment_merged_GutLungAxis.R`.
 
 
-
 ## Step 6 : Volcano plot visualization
 
 + Use `07. Volcano_plot_GutLungAxis_26.04.26.R` to visualize differential metabolites (default value is `q-value < 0.05` & `|Log2FoldChange| < 1`).
 + You can also show only specific metabolic features in interested pathways.
-
 
 
 ## Step 7 : Candidate biomarker discovery
@@ -87,5 +80,4 @@
 + (Optional) Or you can also find candidate biomarkers by using `MFuzz` package in `R`, which clusters metabolic features based on trending tendencies. In this case, use `09. Mfuzz_GutLungAxis_26.04.26.R`.
 
 + Identify candidate features using venn-diagram or Mfuzz clustering or supervised methods-based multivariate analysis, such as PLS-DA, OPLS-DA (to minimize risks of over-fitting), and sPLS-DA. Machine learning methods can be also used, such as Random Forest (RF; recommended for large dataset) or Suppot Vector Machine (SVM; recommended for small dataset).
-
 
