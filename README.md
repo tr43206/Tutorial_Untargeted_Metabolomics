@@ -74,7 +74,7 @@
 + You can also show only specific metabolic features in interested pathways.
 
 
-## Step 7 : Candidate biomarker discovery
+## Step 7 : Candidate biomarkers discovery
 
 + Use `08. Individual_metabolites_merged_v2_GutLungAxis.ipynb` to individually visualize differential metabolites into box plots.
 + (Optional) Or you can also find candidate biomarkers by using `MFuzz` package in `R`, which clusters metabolic features based on trending tendencies. In this case, use `09. Mfuzz_GutLungAxis_26.04.26.R`.
