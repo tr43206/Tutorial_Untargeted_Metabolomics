@@ -62,7 +62,7 @@
    Data scaling : `None`
 4) Select a pathway library : Mammals : `Mus musculus (house mouse) (KEGG)` (if your samples are from human, select `Homo sapiens (KEGG)`. Other options are set to default.)
    -> Briefly check the result, then check `Submit`.
-5) Download `pathway_result.csv`, then change their name to distinguish with other output files (e.g., pathway_results_2w.csv`).
+5) Download `pathway_result.csv`, then change their name to distinguish with other output files (e.g., `pathway_results_2w.csv`).
 
 + Use `06. Pathway_Enrichment_GutLungAxis.R` for visualization to enrichment plot.
 + (Optional) If you want to merge paired sample data in one enrichment plot, use `06. Pathway_Enrichment_merged_GutLungAxis.R`.
