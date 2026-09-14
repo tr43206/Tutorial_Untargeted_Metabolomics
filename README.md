@@ -1,15 +1,16 @@
 # Metabolomics_Tutorial
-+ Output Excel file of Compound Discoverer (Thermo Fisher Scientific; v3.3 SP2) was used for analysis.
++ Output Excel file of `Compound Discoverer` (Thermo Fisher Scientific; v3.3 SP2) was used for analysis.
 
-+ `Gut-Lung Axis` project
++ `Experiment 1` in `Gut-Lung Axis` project
+  + Groups : `Control` and `VNAM` (antibiotic cocktail treated group)
 + Orbitrap LC-MS/MS
-+ Phase A (Stationary phase) : Water with 1% FA (Formic acid)
-+ Phase B (Mobile phase) : Methanol with 1% FA
-+ Total of 20 minutes protocol was used.
+  + Phase A (Stationary phase) : Water with 1% FA (Formic acid)
+  + Phase B (Mobile phase) : Methanol with 1% FA
+  + Total of 20 minutes protocol was used.
 
 
 ## Step 0 : Export Excel file from Compound Discoverer
-1) Initiate Compound Discoverer.
+1) Initiate `Compound Discoverer`.
 2) `File` -> `Open Results...` -> Open `CDRESULTVIEW` or `CDRESULT` format file.
 3) Check the `Area` box in `Field Chooser` (its below the `Compounds` tag, next to the `Tags` column).
 4) Right-click anywhere in the metabolic table -> `Export` -> `As Excel...` -> change the `Path`, and click the `Export` button.
