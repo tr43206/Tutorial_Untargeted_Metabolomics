@@ -2,6 +2,7 @@
 + Output Excel file of `Compound Discoverer` (Thermo Fisher Scientific; v3.3 SP2) was used for analysis.
 
 + `Experiment 1` in `Gut-Lung Axis` project
+  + Mouse *In vivo*
   + Groups : `Control` and `VNAM` (antibiotic cocktail treated group)
 + Orbitrap LC-MS/MS
   + Phase A (Stationary phase) : Water with 1% FA (Formic acid)
