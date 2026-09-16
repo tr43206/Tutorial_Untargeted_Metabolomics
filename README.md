@@ -1,4 +1,4 @@
-# Untargeted_Metabolomics_Tutorial
+# Tutorial_Untargeted_Metabolomics
 + Output Excel file of `Compound Discoverer` (Thermo Fisher Scientific; v3.3 SP2) was used for analysis.
 
 + `Experiment 1` in `Gut-Lung Axis` project
